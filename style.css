@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 50px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+    animation: slideDown 1s ease-in-out;
+}
+
+.logo {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
+    color: #ffcc00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover {
+    color: #ffcc00;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/*Hero Section*/
+.hero {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    display: flex;
+    flex: 1;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.overlay {
+    background: rgba (0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    color: white;
+    flex-wrap: wrap;
+}
+.left-content {
+    width: 45%;
+    min-width: 250px;
+}
+.left-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.left-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.right-content {
+    width: 35%;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.right-content h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #001aff;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 2s ease-in;
+}
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+input:focus {
+    outline: none;
+    border-bottom: 1px solid hsl(246, 100%, 50%);
+}
+input::placeholder {
+    color: #ddd;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #001aff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+.forgot {
+    color: hsl(226, 100%, 50%);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+    align-self: flex-end;
+    transition: color 0.3s ease;
+}
+.forgot:hover {
+    color: #ffcc00;
+}
+form p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+form a {
+    color: hsl(246, 100%, 50%);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+form a:hover {
+    color: #fff;
+}
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: rgb(60, 119, 207);
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 10px;
+    animation: fadeUp 2s ease-in-out;
+}
+/* Responsive Design */
+@media (max-width: 900px){
+    .overlay {
+        flex-direction: column;
+        text-align: center;
+        padding: 5% 10%
+    }
+    .left-content, .right-content {
+        width: 100%;
+    }
+    .left-content h2{
+        font-size: 1.8rem;
+    }
+    .right-content {
+        margin-top: 30px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .left-content h2 {
+        font-size: 1.5rem;
+    }
+    input {
+        font-size: 0.9rem;
+    }
+    button {
+        padding: 8px;
+    }
+}
